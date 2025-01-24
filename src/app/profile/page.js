@@ -6,9 +6,9 @@ import { redirect } from "next/navigation";
 export default async function Profile() {
     const { isAuthenticated } = getKindeServerSession();
 
-    // if (!(await isAuthenticated())) {
-    //     redirect("/api/auth/login");
-    // }
+    if (!(await isAuthenticated())) {
+        redirect("/api/auth/login");
+    }
 
 
     // return (await isAuthenticated()) ? (
